@@ -6,6 +6,7 @@ import morgan from 'morgan'
 import dotenv from 'dotenv'
 import connectDB from './config/db.js'
 import authRoutes from './routes/authRoutes.js'
+import transRoutes from './routes/transRoutes.js'
 
 const app = express()
 connectDB()
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(morgan('dev'))
 
 app.use('/api/v1/auth', authRoutes)
+app.use('/api/v2/transection', transRoutes)
 
 
 
